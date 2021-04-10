@@ -1299,10 +1299,10 @@ void s_reset_abandoning_line(screen_t *s, int screen_width) {
         abandon_line_string.append(str2wcstring(clr_eol));
     }
 
-    const std::string narrow_abandon_line_string = wcs2string(abandon_line_string);
-    write_loop(STDOUT_FILENO, narrow_abandon_line_string.c_str(),
-               narrow_abandon_line_string.size());
-    s->actual.cursor.x = 0;
+    /* const std::string narrow_abandon_line_string = wcs2string(abandon_line_string); */
+    /* write_loop(STDOUT_FILENO, narrow_abandon_line_string.c_str(), */
+    /*            narrow_abandon_line_string.size()); */
+    /* s->actual.cursor.x = 0; */
 
     fstat(STDOUT_FILENO, &s->prev_buff_1);
     fstat(STDERR_FILENO, &s->prev_buff_2);
